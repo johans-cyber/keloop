@@ -1,0 +1,85 @@
+html, body {
+    height: 100%;
+}
+
+.global-container {
+    height: 100%;
+    background: url(../bootstrap/img/bg-1.jpg) repeat center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.login-form {
+    width: 380px;
+    height: 450px;
+    padding: 30px;
+}
+
+input[type="email"],
+input[type="password"] {
+    background: none;
+    color: gray;
+    border: 2px solid gray;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: none;
+    background: rgb(248, 241, 241);
+    color: rgb(0, 0, 0);
+    margin: 0;
+}
+
+.card-title {
+    font-weight: 750;
+    padding-top: 20px;
+}
+
+.btn {
+    background: rgb(0, 0, 255) ;
+    color: white !important;
+    transform: translateY(10px);
+    font-size: 14px;
+    border-radius: 10px !important;
+
+}
+
+.banner {
+    background: url(../bootstrap/img/printer.jpg) no-repeat center;
+    background-size: cover;
+    padding: 15rem 0;
+    color: white;
+    text-align: end;
+    border: 2px;
+}
+
+.upload-container {
+    height: 100%;
+    padding: 2px;
+    display: contents;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.user-container {
+    height: 100%;
+    padding: 2px;
+    display: contents;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.table-action .btn {
+    transform: none;
+}
+
+td {
+    vertical-align: middle;
+}
