@@ -56,7 +56,7 @@
     $bahan = $_POST['txtBahan'];
     $banyak = $_POST['txtBanyak'];
     $ukuran = $_POST['txtUkuran'];
-    $file = $_FILES["txtFile"]["name"];
+    $file = $file_name;
     $keterangan = $_POST['txtKeterangan'];
 
     $sql = "INSERT INTO order_print VALUES('','$user','$print','$bahan','$banyak','$ukuran','$file','$keterangan')";
