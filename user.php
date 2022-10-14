@@ -88,6 +88,14 @@
       </tr>
       <?php  
       }
+      if($count==0){
+        ?>
+      <tr>
+        <th scope="row">1</th>
+        <td colspan="4">Tidak ada data</td>
+      </tr>
+      <?php
+      }
       ?>
     </tbody>
   </table>

@@ -7,10 +7,14 @@
   
   if(isset($_POST['btn_submit'])){
 
+    $milliseconds = floor(microtime(true) * 1000);
+
+    $file_name = $milliseconds."_".basename($_FILES["txtFile"]["name"]);
+
     $target_dir = "uploads/";
-    $target_file = $target_dir . basename($_FILES["txtFile"]["name"]);
+    $target_file = $target_dir . $file_name;
     $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    $fileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     
     // Check if file already exists
     if (file_exists($target_file)) {
@@ -27,7 +31,7 @@
     }
     
     // Allow certain file formats
-    if($imageFileType != "pdf") {
+    if($fileType != "pdf") {
       echo "Sorry, only PDF files are allowed.";
       $uploadOk = 0;
       die();
@@ -40,7 +44,7 @@
     // if everything is ok, try to upload file
     } else {
       if (move_uploaded_file($_FILES["txtFile"]["tmp_name"], $target_file)) {
-        echo "The file ". htmlspecialchars( basename( $_FILES["txtFile"]["name"])). " has been uploaded.";
+        echo "The file ". htmlspecialchars($file_name). " has been uploaded.";
       } else {
         echo "Sorry, there was an error uploading your file.";
         die();
@@ -157,8 +161,8 @@
           <input type="text" class="form-control" name="txtUkuran" id="InputUkuran">
         </div>
         <div class="mb-3">
-          <label for="formFile" class="form-label">Input File Print</label>
-          <input class="form-control" type="file" name="txtFile" id="formFile">
+          <label for="formFile" class="form-label">Input File Print (.pdf only)</label>
+          <input class="form-control" type="file" name="txtFile" id="formFile" accept="application/pdf,application/vnd.ms-excel">
         </div>
         <div class="mb-3">
           <label for="InputKeterangan" class="form-label">Keterangan</label>

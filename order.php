@@ -87,7 +87,15 @@
         <td><a href="uploads/<?=$row['file']?>"><?=$row['file']?></a></td>
         <td><?=$row['keterangan']?></td>
       </tr>
-      <?php  
+      <?php
+      }
+      if($count==0){
+        ?>
+      <tr>
+        <th scope="row">1</th>
+        <td colspan="6">Tidak ada data</td>
+      </tr>
+      <?php
       }
       ?>
     </tbody>
